@@ -1,0 +1,39 @@
+{% extends 'flatpages/base.html' %}
+{% load my_filters %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+    <hr>
+        <table>
+            <tr>
+                <td>
+                    Автор
+                </td>
+                <td>
+                    Заголовок
+                </td>
+                <td>
+                    Дата публикации
+                </td>
+                <td>
+                    Содержание
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ pon.author.user }}
+                </td>
+                <td>
+                    {{ pon.title }}
+                </td>
+                <td>
+                    {{ pon.time_in|date:'d-M-Y H:i' }}
+                </td>
+                <td>
+                    {{ pon.text|relax }}
+                </td>
+            </tr>
+        </table>
+{% endblock content %}
